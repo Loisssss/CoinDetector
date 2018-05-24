@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CoinDetector</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_album">AlbumActivity</string>
+</resources>
