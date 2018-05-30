@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -53,6 +54,7 @@ public class AlbumActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, IMAGE);
+
             }
         });
     }
@@ -96,7 +98,7 @@ public class AlbumActivity extends AppCompatActivity {
     private void showImage(String imaePath){
         Bitmap bm = BitmapFactory.decodeFile(imaePath);
 
-         // change Bitmap to mat
+        // change Bitmap to mat
         Mat srcImage = new Mat(bm.getHeight(), bm.getWidth(), CvType.CV_8UC1);
         Utils.bitmapToMat(bm, srcImage);
         ellipseDetector = new EllipseDetector();

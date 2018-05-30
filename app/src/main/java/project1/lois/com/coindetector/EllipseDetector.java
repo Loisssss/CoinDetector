@@ -66,11 +66,12 @@ public class EllipseDetector {
         double threshold_area_max = 650;
 
 
-        return ( calculateError(array, rect) < threshold_error )
-                && ( calculateRatioofAxis(rect) > threshould_ratio
-                && (calculateArea(rect) > threshold_area_min)
+        return (
+                calculateError(array, rect) < threshold_error ) &&
+                calculateRatioofAxis(rect) > threshould_ratio &&
+                calculateArea(rect) > threshold_area_min
 //                && (calculateArea(rect) < threshold_area_max)
-        );
+        ;
     }
 
 
@@ -83,8 +84,6 @@ public class EllipseDetector {
     private double calculateRatioofAxis( RotatedRect rect){
         double ratio = 0;
         ratio = Math.abs((rect.size.width / 2 ) / (rect.size.height / 2));
-//        Log.i(TAG, "calculateRatio: " + ratio);
-
         return ratio;
     }
 
@@ -94,14 +93,13 @@ public class EllipseDetector {
             double f = (Math.pow(point.x - rect.center.x, 2) / Math.pow(rect.size.width / 2, 2)) +
                     (Math.pow(point.y - rect.center.y, 2) / Math.pow(rect.size.height / 2, 2));
             err = Math.pow(Math.abs(1.0 - f)  * 10, 2);
-//            Log.i(TAG, "calculateError: " + err);
         }
 
         err = err / array.length;
         return err;
     }
 
-    private void findCircles(Mat input) {
+    public void findCircles(Mat input) {
         Mat circles = new Mat();
 
         // decrease noise to avoid detect the wrong circle

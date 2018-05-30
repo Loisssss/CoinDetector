@@ -88,6 +88,7 @@ public class VideoActivity extends AppCompatActivity implements CameraBridgeView
 //        findEllipses(inputFrame.gray());
         ellipseDetector = new EllipseDetector();
         ellipseDetector.findEllipses(inputFrame.gray());
+//        ellipseDetector.findCircles(inputFrame.gray());
         return inputFrame.rgba();
     }
 

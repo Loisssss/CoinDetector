@@ -9,7 +9,14 @@
     <ImageView
         android:id="@+id/imageAlbum"
         android:layout_width="fill_parent"
-        android:layout_height="450dp" />
+        android:layout_height="340dp" />
+
+    <TextView
+        android:id="@+id/textView_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Result is ："/>
 
     <Button
         android:id="@+id/buttonAlbum"
@@ -21,5 +28,9 @@
         android:text="Back"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-
+    <Button
+        android:id="@+id/buttonPredict"
+        android:text="Predict"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
